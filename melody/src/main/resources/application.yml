@@ -1,0 +1,15 @@
+server:
+  port: 1234
+
+spring:
+  application:
+    name: te
+  task:
+    execution:
+      pool:
+        core-size: 5
+        max-size: 5
+        queue-capacity: 5
+        keep-alive: 60
+      thread-name-prefix: threadpool-task-
+
