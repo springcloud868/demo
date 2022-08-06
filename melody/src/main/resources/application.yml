@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: te
+    name: melody
   task:
     execution:
       pool:

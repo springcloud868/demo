@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
  * @author 86176
  */
 
-public interface AsyncService {
+public interface TestService {
 
     /**
      * 测试
@@ -17,4 +17,10 @@ public interface AsyncService {
      */
     @Async
     CompletableFuture<String> hello(String name) throws InterruptedException;
+
+    String testThreadPool();
+
+    Object testThread();
+
+    Object threadPool();
 }
