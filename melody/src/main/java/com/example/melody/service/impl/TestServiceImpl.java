@@ -48,7 +48,7 @@ public class TestServiceImpl implements TestService {
     public String testThreadPool() {
         callbackThreadPool.execute(() -> log.info("线程池执行任务代码块"));
         // 等待所有线程都执行完，再执行后续操作
-        List<String> dataList = Arrays.asList("123","456");
+        List<String> dataList = Arrays.asList("123", "456");
 
         CompletableFuture<?>[] cfs = new CompletableFuture[3];
         int index = 0;
@@ -67,19 +67,19 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public Object testThread() {
-        CompletableFuture<Void> completableFuture1 = CompletableFuture.runAsync(()->{
-            for(int i = 0; i< NumberEnums.THOUSAND.getSource(); i++) {
-                log.info("a-"+i);
+        CompletableFuture<Void> completableFuture1 = CompletableFuture.runAsync(() -> {
+            for (int i = 0; i < NumberEnums.THOUSAND.getSource(); i++) {
+                log.info("a-" + i);
             }
         }, applicationTaskExecutor);
-        CompletableFuture<Void> completableFuture2 = CompletableFuture.runAsync(()->{
-            for(int i=0; i<NumberEnums.THOUSAND.getSource(); i++) {
-                log.info("w-"+i);
+        CompletableFuture<Void> completableFuture2 = CompletableFuture.runAsync(() -> {
+            for (int i = 0; i < NumberEnums.THOUSAND.getSource(); i++) {
+                log.info("w-" + i);
             }
         }, applicationTaskExecutor);
-        CompletableFuture<Void> completableFuture3 = CompletableFuture.runAsync(()->{
-            for(int i = 0; i< NumberEnums.THOUSAND.getSource(); i++) {
-                log.info("a-"+i);
+        CompletableFuture<Void> completableFuture3 = CompletableFuture.runAsync(() -> {
+            for (int i = 0; i < NumberEnums.THOUSAND.getSource(); i++) {
+                log.info("a-" + i);
             }
         }, applicationTaskExecutor);
         CompletableFuture.allOf(completableFuture1, completableFuture2, completableFuture3);
@@ -88,19 +88,19 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public Object threadPool() {
-        CompletableFuture<Void> completableFuture1 = CompletableFuture.runAsync(()->{
-            for(int i = 0; i< NumberEnums.THOUSAND.getSource(); i++) {
-                log.info("a-"+i);
+        CompletableFuture<Void> completableFuture1 = CompletableFuture.runAsync(() -> {
+            for (int i = 0; i < NumberEnums.THOUSAND.getSource(); i++) {
+                log.info("a-" + i);
             }
         }, threadPoolTaskExecutor);
-        CompletableFuture<Void> completableFuture2 = CompletableFuture.runAsync(()->{
-            for(int i=0; i<NumberEnums.THOUSAND.getSource(); i++) {
-                log.info("w-"+i);
+        CompletableFuture<Void> completableFuture2 = CompletableFuture.runAsync(() -> {
+            for (int i = 0; i < NumberEnums.THOUSAND.getSource(); i++) {
+                log.info("w-" + i);
             }
         }, threadPoolTaskExecutor);
-        CompletableFuture<Void> completableFuture3 = CompletableFuture.runAsync(()->{
-            for(int i = 0; i< NumberEnums.THOUSAND.getSource(); i++) {
-                log.info("a-"+i);
+        CompletableFuture<Void> completableFuture3 = CompletableFuture.runAsync(() -> {
+            for (int i = 0; i < NumberEnums.THOUSAND.getSource(); i++) {
+                log.info("a-" + i);
             }
         }, threadPoolTaskExecutor);
 

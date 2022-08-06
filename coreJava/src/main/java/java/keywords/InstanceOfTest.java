@@ -11,7 +11,7 @@ public class InstanceOfTest {
         Object obj = "123";
         System.out.println(obj instanceof String);
         int i = 1;
-        i = i<<2;
+        i = i << 2;
         System.out.println(i);
     }
 }

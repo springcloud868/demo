@@ -83,22 +83,22 @@ public enum HobbyContentGroupEnum {
     /**
      * 星卡
      */
-    CARD( "星卡"),
+    CARD("星卡"),
 
     /**
      * 星球
      */
-    STAR( "星球"),
+    STAR("星球"),
 
     /**
      * 广场
      */
-    SQUARE( "广场"),
+    SQUARE("广场"),
 
     /**
      * 星社
      */
-    STAR_CLUB( "星社"),
+    STAR_CLUB("星社"),
 
     /**
      * 潮流地图
@@ -128,8 +128,7 @@ public enum HobbyContentGroupEnum {
     /**
      * 星集
      */
-    STAR_COLLECT("星集")
-    ;
+    STAR_COLLECT("星集");
 
     private String desc;
 

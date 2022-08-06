@@ -12,23 +12,26 @@ public class ThreadPoolUtil {
 
     /**
      * 无返回值直接执行, 管他娘的
+     *
      * @param runnable
      */
-    public  static void execute(Runnable runnable){
+    public static void execute(Runnable runnable) {
         getThreadPool().execute(runnable);
     }
 
     /**
      * 返回值直接执行, 管他娘的
+     *
      * @param callable
      */
-    public  static <T> Future<T> submit(Callable<T> callable){
-        return   getThreadPool().submit(callable);
+    public static <T> Future<T> submit(Callable<T> callable) {
+        return getThreadPool().submit(callable);
     }
 
 
     /**
      * dcs获取线程池
+     *
      * @return 线程池对象
      */
     public static ThreadPoolExecutor getThreadPool() {

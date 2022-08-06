@@ -12,17 +12,17 @@ import java.util.stream.Collectors;
  */
 public class LambdaTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         List<Student> list = new ArrayList<>();
-        Student student1 = new Student("zhangsan",12);
+        Student student1 = new Student("zhangsan", 12);
         list.add(student1);
-        Student student2 = new Student("lisi",11);
+        Student student2 = new Student("lisi", 11);
         list.add(student2);
-        Student student3 = new Student("wangwu",13);
+        Student student3 = new Student("wangwu", 13);
         list.add(student3);
-        Student student4 = new Student("zhaoliu",14);
+        Student student4 = new Student("zhaoliu", 14);
         list.add(student4);
-        Student student5 = new Student("songqi",12);
+        Student student5 = new Student("songqi", 12);
         list.add(student5);
 
         LambdaTest lambdaTest = new LambdaTest();
@@ -30,19 +30,19 @@ public class LambdaTest {
         lambdaTest.toList(list);
     }
 
-    public Map doMap(List<Student> list){
+    public Map doMap(List<Student> list) {
         Map<Integer, Student> map = list.stream().collect(Collectors.toMap(Student::getAge, v -> v));
         return map;
     }
 
-    public List<Integer> toList(List<Student> list){
+    public List<Integer> toList(List<Student> list) {
         List<Integer> integers = list.stream().map(Student::getAge).collect(Collectors.toList());
         return integers;
     }
 
 }
 
-class Student{
+class Student {
     private String name;
     private Integer age;
 

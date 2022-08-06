@@ -17,7 +17,7 @@ public enum BusinessEnum {
     /**
      * 内容服务
      */
-    CONTENT(2 ,"内容服务"),
+    CONTENT(2, "内容服务"),
     /**
      * 搜索服务
      */
@@ -25,7 +25,7 @@ public enum BusinessEnum {
     /**
      * 打赏服务
      */
-    REWARD(4 ,"打赏服务"),
+    REWARD(4, "打赏服务"),
     /**
      * 资源服务
      */
@@ -92,29 +92,28 @@ public enum BusinessEnum {
     /**
      * 星卡
      */
-    CARD(19,"星卡"),
+    CARD(19, "星卡"),
 
     /**
      * 投稿活动
      */
-    CAST_ACTIVITIES(12,"投稿活动"),
+    CAST_ACTIVITIES(12, "投稿活动"),
 
     /**
      * 星幕
      */
-    STAR_SCREEN(13,"星幕"),
+    STAR_SCREEN(13, "星幕"),
 
     /**
      * 星集
      */
-    STAR_COLLECT(14,"星集")
-    ;
+    STAR_COLLECT(14, "星集");
 
     private int bizId;
 
     private String desc;
 
-    public int getBizId(){
+    public int getBizId() {
         return this.bizId;
     }
 
@@ -123,8 +122,8 @@ public enum BusinessEnum {
     }
 
     public static BusinessEnum getByValue(Integer value) {
-        for (BusinessEnum businessEnum : BusinessEnum.values()){
-            if (businessEnum.getBizId() == value){
+        for (BusinessEnum businessEnum : BusinessEnum.values()) {
+            if (businessEnum.getBizId() == value) {
                 return businessEnum;
             }
         }

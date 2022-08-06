@@ -11,7 +11,6 @@ import java.util.concurrent.*;
 
 /**
  * @author 86176
- *
  */
 @Slf4j
 @Configuration
@@ -30,6 +29,7 @@ public class CustomThreadPoolConfig {
 
     /**
      * 机遇 ExecutorService 自定义线程池（java 5引入的）
+     *
      * @return ExecutorService
      */
     @Bean
@@ -45,6 +45,7 @@ public class CustomThreadPoolConfig {
 
     /**
      * 自定义 ThreadPoolTaskExecutor 线程池
+     *
      * @return ThreadPoolTaskExecutor
      */
     @Bean

@@ -54,9 +54,9 @@ public class ComplatableFutureTest {
                             return null;
                         });
         CompletableFuture.allOf(future1, future2, future3).join();
-        System.out.println(future1.get()+"========="+future2.get());
+        System.out.println(future1.get() + "=========" + future2.get());
         long time2 = System.currentTimeMillis();
-        System.out.println("耗时："+(time2-time1));
+        System.out.println("耗时：" + (time2 - time1));
     }
 
     public static String test1(String flag) throws InterruptedException {

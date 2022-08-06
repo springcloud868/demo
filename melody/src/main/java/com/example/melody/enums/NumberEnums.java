@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * 数值枚举
+ *
  * @author 86176
  */
 @Getter

@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class DifThreadPoolConfig {
 
     @Bean("taskExecutor")
-    public Executor  taskExecutor() {
+    public Executor taskExecutor() {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setCorePoolSize(10);
         taskExecutor.setMaxPoolSize(50);

@@ -56,8 +56,8 @@ public enum ShareScenesTypeEnum {
     }
 
     public static ShareScenesTypeEnum getByType(int type) {
-        for(ShareScenesTypeEnum codeEnum : ShareScenesTypeEnum.values()) {
-            if(codeEnum.getType() == type) {
+        for (ShareScenesTypeEnum codeEnum : ShareScenesTypeEnum.values()) {
+            if (codeEnum.getType() == type) {
                 return codeEnum;
             }
         }

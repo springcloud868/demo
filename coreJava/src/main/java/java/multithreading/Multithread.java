@@ -9,11 +9,11 @@ import static java.util.concurrent.Executors.newFixedThreadPool;
  * @decription
  * @date 2022/2/22
  */
-public class Multithread implements Runnable{
+public class Multithread implements Runnable {
 
-    int i ;
+    int i;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ExecutorService executor = newFixedThreadPool(90);
         Multithread threadDemo1 = new Multithread();
         Multithread threadDemo2 = new Multithread();
@@ -30,7 +30,7 @@ public class Multithread implements Runnable{
 
     @Override
     public void run() {
-        i = i+1;
+        i = i + 1;
         System.out.println(i);
     }
 }

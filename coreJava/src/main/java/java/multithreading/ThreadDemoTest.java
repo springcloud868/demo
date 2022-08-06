@@ -15,7 +15,7 @@ public class ThreadDemoTest {
 
 
     @Test
-    public void test() throws Exception{
+    public void test() throws Exception {
         long start = System.currentTimeMillis();
         ArrayList<Future> futureList = new ArrayList<>();
         // 发送10次消息
@@ -24,7 +24,7 @@ public class ThreadDemoTest {
                 String msg = String.format("这是第{%s}条消息", i);
                 Future<String> messageFuture = ThreadPoolUtil.submit(() -> {
 //                    Thread.sleep(1000);
-                    System.out.printf(Thread.currentThread()+"打印消息%s%n", msg);
+                    System.out.printf(Thread.currentThread() + "打印消息%s%n", msg);
                     return "OK";
                 });
                 futureList.add(messageFuture);

@@ -16,8 +16,8 @@ public enum LineStatus {
     /**
      * @Description
      */
-    ONLINE(1,"上架"),
-    OFFLINE(0,"下架");
+    ONLINE(1, "上架"),
+    OFFLINE(0, "下架");
 
     private final Integer status;
     private final String description;

@@ -11,9 +11,9 @@ import java.security.NoSuchAlgorithmException;
  */
 public class MD5Test {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         MD5Test md5Test = new MD5Test();
-        System.out.println( md5Test.getMD5String("22223333333333333333123123123123123123123123123123123123123123123123"));
+        System.out.println(md5Test.getMD5String("22223333333333333333123123123123123123123123123123123123123123123123"));
     }
 
     public String getMD5String(String str) {

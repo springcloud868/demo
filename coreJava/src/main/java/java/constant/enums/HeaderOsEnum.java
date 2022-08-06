@@ -10,20 +10,21 @@ public enum HeaderOsEnum {
     /**
      * OS类型
      */
-    IOS("iOS","iOS"),
-    ANDROID ("Android","Android"),
-    Window ("Window","Window"),
-    Mac ("Mac","Mac");
+    IOS("iOS", "iOS"),
+    ANDROID("Android", "Android"),
+    Window("Window", "Window"),
+    Mac("Mac", "Mac");
 
 
     /**
      * 构造方法
+     *
      * @param desc
      * @param code
      */
     HeaderOsEnum(String desc, String code) {
-        this.desc=desc;
-        this.code=code;
+        this.desc = desc;
+        this.code = code;
     }
 
     private String desc;
@@ -34,20 +35,21 @@ public enum HeaderOsEnum {
     /**
      * @return
      */
-    public String desc(){
+    public String desc() {
         return desc;
     }
 
     /**
      * @return
      */
-    public String code(){
+    public String code() {
         return code;
     }
 
     /**
      * 根据code获取desc
-     * @param code  code
+     *
+     * @param code code
      * @return desc
      */
     public static String getDesc(String code) {
@@ -62,7 +64,8 @@ public enum HeaderOsEnum {
 
     /**
      * 根据desc获取code
-     * @param desc  desc
+     *
+     * @param desc desc
      * @return code
      */
     public static String getCode(String desc) {
