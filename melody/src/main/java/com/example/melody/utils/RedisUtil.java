@@ -44,7 +44,6 @@ public class RedisUtil {
      * @Description: 计数
      * @param key
      * @param value
-     * @return
      * @author mario
      * @return: boolean
      */
@@ -66,7 +65,6 @@ public class RedisUtil {
      * @param key
      * @param value
      * @param expireTime
-     * @return
      * @author mario
      * @return: boolean
      */
@@ -88,7 +86,6 @@ public class RedisUtil {
      * @param key
      * @param value
      * @param expireTime
-     * @return
      * @author mario
      * @return: boolean
      */
@@ -153,7 +150,6 @@ public class RedisUtil {
      * @Title: exists
      * @Description: 判断缓存中是否有对应的value
      * @param key
-     * @return
      * @author mario
      * @return: boolean
      */
@@ -166,7 +162,6 @@ public class RedisUtil {
      * @Title: get
      * @Description: 读取
      * @param key
-     * @return
      * @author mario
      * @return: Object
      */
@@ -210,7 +205,6 @@ public class RedisUtil {
      * @Title: hmSize
      * @Description: 哈希获取key数据大小
      * @param key
-     * @return
      * @author mario
      * @return: Long
      */
@@ -225,7 +219,6 @@ public class RedisUtil {
      * @Description: 哈希获取数据
      * @param key
      * @param hashKey
-     * @return
      * @author mario
      * @return: Object
      */
@@ -240,7 +233,6 @@ public class RedisUtil {
      * @Description: 通过key+哈希获取集合
      * @param key
      * @param hashKeys
-     * @return
      * @author mario
      * @return: List
      */
@@ -254,7 +246,6 @@ public class RedisUtil {
      * @Title: hmGetHshKeys
      * @Description: 获取hashKey的集合
      * @param key
-     * @return
      * @author mario
      * @return: Set<Object>
      */
@@ -269,7 +260,6 @@ public class RedisUtil {
      * @Description: 哈希删除数据
      * @param key
      * @param hashKeys
-     * @return
      * @author mario
      * @return: Object
      */
@@ -313,7 +303,6 @@ public class RedisUtil {
      * @param k
      * @param l
      * @param l1
-     * @return
      * @author mario
      * @return: List<? extends Object>
      */
@@ -341,7 +330,6 @@ public class RedisUtil {
      * @Title: setMembers
      * @Description: 集合获取
      * @param key
-     * @return
      * @author mario
      * @return: Set<Object>
      */
