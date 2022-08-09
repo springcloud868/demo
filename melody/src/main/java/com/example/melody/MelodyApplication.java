@@ -17,7 +17,7 @@ public class MelodyApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MelodyApplication.class, args);
-        log.info("--------- melody 启动成功 ---------");
+        log.info("=========== melody 启动成功 ===========");
     }
 
 }
