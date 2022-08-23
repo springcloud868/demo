@@ -1,6 +1,7 @@
 package com.example.melody.utils;
 
 import org.springframework.data.redis.core.*;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
@@ -12,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author 86176
  */
+@Component
 public class RedisUtil {
 
     @Resource
@@ -42,8 +44,8 @@ public class RedisUtil {
      *
      * @Title: increment
      * @Description: 计数
-     * @param key
-     * @param value
+     * @param key key
+     * @param value value
      * @author mario
      * @return: boolean
      */
@@ -62,9 +64,9 @@ public class RedisUtil {
      *
      * @Title: set
      * @Description: 写入缓存设置时效时间
-     * @param key
-     * @param value
-     * @param expireTime
+     * @param key key
+     * @param value value
+     * @param expireTime expireTime
      * @author mario
      * @return: boolean
      */
@@ -83,9 +85,9 @@ public class RedisUtil {
      *
      * @Title: set
      * @Description: 写入缓存设置时效时间
-     * @param key
-     * @param value
-     * @param expireTime
+     * @param key key
+     * @param value value
+     * @param expireTime 有效时间
      * @author mario
      * @return: boolean
      */
@@ -106,7 +108,7 @@ public class RedisUtil {
      *
      * @Title: remove
      * @Description: 批量删除对应的value
-     * @param keys
+     * @param keys keys
      * @author mario
      * @return: void
      */
@@ -120,7 +122,7 @@ public class RedisUtil {
      *
      * @Title: removePattern
      * @Description: 批量删除key
-     * @param pattern
+     * @param pattern pattern
      * @author mario
      * @return: void
      */
@@ -135,7 +137,7 @@ public class RedisUtil {
      *
      * @Title: remove
      * @Description: 删除对应的value
-     * @param key
+     * @param key key
      * @author mario
      * @return: void
      */
@@ -149,7 +151,7 @@ public class RedisUtil {
      *
      * @Title: exists
      * @Description: 判断缓存中是否有对应的value
-     * @param key
+     * @param key key
      * @author mario
      * @return: boolean
      */
@@ -161,7 +163,7 @@ public class RedisUtil {
      *
      * @Title: get
      * @Description: 读取
-     * @param key
+     * @param key key
      * @author mario
      * @return: Object
      */
@@ -189,9 +191,9 @@ public class RedisUtil {
      *
      * @Title: hmSet
      * @Description: 哈希添加数据
-     * @param key
-     * @param hashKey
-     * @param value
+     * @param key key
+     * @param hashKey hashKey
+     * @param value value
      * @author mario
      * @return: void
      */
@@ -204,7 +206,7 @@ public class RedisUtil {
      *
      * @Title: hmSize
      * @Description: 哈希获取key数据大小
-     * @param key
+     * @param key key
      * @author mario
      * @return: Long
      */
@@ -217,8 +219,8 @@ public class RedisUtil {
      *
      * @Title: hmGet
      * @Description: 哈希获取数据
-     * @param key
-     * @param hashKey
+     * @param key key
+     * @param hashKey hashKey
      * @author mario
      * @return: Object
      */
@@ -231,12 +233,12 @@ public class RedisUtil {
      *
      * @Title: hmGet
      * @Description: 通过key+哈希获取集合
-     * @param key
-     * @param hashKeys
+     * @param key key
+     * @param hashKeys hashKeys
      * @author mario
      * @return: List
      */
-    public List hmGet(String key, Collection< Object> hashKeys) {
+    public List<Object> hmGet(String key, Collection< Object> hashKeys) {
         HashOperations<String, Object, Object> hash = redisTemplate.opsForHash();
         return hash.multiGet(key, hashKeys);
     }
@@ -245,7 +247,7 @@ public class RedisUtil {
      *
      * @Title: hmGetHshKeys
      * @Description: 获取hashKey的集合
-     * @param key
+     * @param key key
      * @author mario
      * @return: Set<Object>
      */
@@ -258,8 +260,8 @@ public class RedisUtil {
      *
      * @Title: hmDelete
      * @Description: 哈希删除数据
-     * @param key
-     * @param hashKeys
+     * @param key key
+     * @param hashKeys hashKeys
      * @author mario
      * @return: Object
      */
@@ -272,8 +274,8 @@ public class RedisUtil {
      *
      * @Title: lPush
      * @Description: 列表添加
-     * @param k
-     * @param v
+     * @param k k
+     * @param v v
      * @author mario
      * @return: void
      */
@@ -286,8 +288,8 @@ public class RedisUtil {
      *
      * @Title: lPushAll
      * @Description: 列表添加集合
-     * @param key
-     * @param values
+     * @param key key
+     * @param values values
      * @author mario
      * @return: void
      */
@@ -300,9 +302,9 @@ public class RedisUtil {
      *
      * @Title: lRange
      * @Description: 列表获取
-     * @param k
-     * @param l
-     * @param l1
+     * @param k k
+     * @param l l
+     * @param l1 l1
      * @author mario
      * @return: List<? extends Object>
      */
@@ -315,8 +317,8 @@ public class RedisUtil {
      *
      * @Title: add
      * @Description: 集合添加
-     * @param key
-     * @param value
+     * @param key key
+     * @param value value
      * @author mario
      * @return: void
      */
@@ -329,7 +331,7 @@ public class RedisUtil {
      *
      * @Title: setMembers
      * @Description: 集合获取
-     * @param key
+     * @param key key
      * @author mario
      * @return: Set<Object>
      */
@@ -343,30 +345,30 @@ public class RedisUtil {
      *
      * @Title: zAdd
      * @Description: 有序集合添加
-     * @param key
-     * @param value
-     * @param scoure
+     * @param key key
+     * @param value value
+     * @param source source
      * @author mario
      * @return: void
      */
-    public void zAdd(String key, Object value, double scoure) {
+    public void zAdd(String key, Object value, double source) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
-        zset.add(key, value, scoure);
+        zset.add(key, value, source);
     }
 
     /**
      *
      * @Title: zAddAll
      * @Description: 一次性添加set集合
-     * @param key
-     * @param setValue
-     * @param scoure
+     * @param key key
+     * @param setValue setValue
+     * @param source source
      * @author mario
      * @return: void
      */
-    public void zAddAll(String key, Set<Object> setValue, double scoure) {
+    public void zAddAll(String key, Set<Object> setValue, double source) {
         for(Object object : setValue) {
-            zAdd(key, object, scoure);
+            zAdd(key, object, source);
         }
     }
 
@@ -374,28 +376,28 @@ public class RedisUtil {
      *
      * @Title: rangeByScore
      * @Description: 有序集合获取
-     * @param key
+     * @param key key
      * @author mario
      * @return: Set<Object>
      */
-    public Set<Object> rangeByScore(String key, double scoure, double scoure1) {
+    public Set<Object> rangeByScore(String key, double source, double source1) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
-        return zset.rangeByScore(key, scoure, scoure1);
+        return zset.rangeByScore(key, source, source1);
     }
 
     /**
      *
      * @Title: removeRangeByScore
-     * @Description: 根据分数范围删除ZSet集合中的元素（minScoure和maxSource相同，则是根据分数精确删除）
-     * @param key
-     * @param minScoure
-     * @param maxSource
+     * @Description: 根据分数范围删除ZSet集合中的元素（minSource和maxSource相同，则是根据分数精确删除）
+     * @param key key
+     * @param minSource minSource
+     * @param maxSource maxSource
      * @author mario
      * @return: long
      */
-    public long removeRangeByScore(String key, double minScoure, double maxSource) {
+    public long removeRangeByScore(String key, double minSource, double maxSource) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
-        return zset.removeRangeByScore(key, minScoure, maxSource);
+        return zset.removeRangeByScore(key, minSource, maxSource);
     }
 
     public void zRemove(String key,Object... values) {
@@ -406,8 +408,8 @@ public class RedisUtil {
 
     /**
      * 获取 过期时间
-     * @param key
-     * @param timeUnit
+     * @param key key
+     * @param timeUnit timeUnit
      */
     public Long getKeyExpireTime(String key, TimeUnit timeUnit) {
         return redisTemplate.getExpire(key, timeUnit);
