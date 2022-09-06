@@ -12,12 +12,12 @@ public class FirstListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        log.info("First 监听器 initialized....");
+        log.info("First 监听器初始化....");
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        log.info("First 监听器 destroyed......");
+        log.info("First 监听器销毁......");
     }
 
 }
