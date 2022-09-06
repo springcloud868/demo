@@ -19,9 +19,9 @@ public interface TestService {
     @Async
     CompletableFuture<String> hello(String name) throws InterruptedException;
 
-    String testThreadPool();
+    void testThreadPool();
 
-    Object testThread();
+    void testThread();
 
-    Object threadPool();
+    void threadPool();
 }

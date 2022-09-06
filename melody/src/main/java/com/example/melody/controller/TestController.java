@@ -29,17 +29,18 @@ public class TestController {
 
     @RequestMapping("/pool")
     public String testThreadPool() {
-        return testService.testThreadPool();
+        testService.testThreadPool();
+        return "success";
     }
 
     @GetMapping("/thread")
-    public Object testThread() {
-        return testService.testThread();
+    public void testThread() {
+        testService.testThread();
     }
 
     @GetMapping("/thread-pool")
-    public Object threadPool() {
-        return testService.threadPool();
+    public void threadPool() {
+        testService.threadPool();
     }
 
 }

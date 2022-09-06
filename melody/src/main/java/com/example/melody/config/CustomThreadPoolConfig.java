@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.*;
@@ -14,6 +16,7 @@ import java.util.concurrent.*;
  */
 @Slf4j
 @Configuration
+@Order(value = Ordered.HIGHEST_PRECEDENCE - 10)
 public class CustomThreadPoolConfig {
 
     @Value("${spring.task.execution.pool.core-size}")
