@@ -17,7 +17,7 @@ public class MD5Test {
     }
 
     public String getMD5String(String str) {
-        byte[] secretBytes = null;
+        byte[] secretBytes;
         try {
             secretBytes = MessageDigest.getInstance("md5").digest(str.getBytes());
         } catch (NoSuchAlgorithmException e) {
