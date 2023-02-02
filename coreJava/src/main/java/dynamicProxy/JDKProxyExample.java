@@ -1,5 +1,7 @@
 package dynamicProxy;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -52,7 +54,7 @@ public class JDKProxyExample {
          * @throws IllegalAccessException
          */
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args)
+        public Object invoke(Object proxy, @NotNull Method method, Object[] args)
                 throws InvocationTargetException, IllegalAccessException {
             System.out.println("动态代理之前的业务处理.");
             return method.invoke(target, args);
