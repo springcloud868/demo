@@ -33,22 +33,17 @@ public class LambdaTest {
 //        lambdaTest.doMap(list);
 //        lambdaTest.toList(list);
         AtomicInteger index = new AtomicInteger();
-        list.stream().map(vo-> {
-            vo.setGrade(index.getAndIncrement()+1);
-            return vo;
-        }).sorted(Comparator.comparing(Student::getAge).thenComparing(Student::getGrade)).forEach(VO->{
-                System.out.println(JSONObject.toJSON(VO));
-            });
+        list.stream().peek(vo-> vo.setGrade(index.getAndIncrement()+1))
+                .sorted(Comparator.comparing(Student::getAge).thenComparing(Student::getGrade))
+                .forEach(VO-> System.out.println(JSONObject.toJSON(VO)));
     }
 
     public Map doMap(List<Student> list) {
-        Map<Integer, Student> map = list.stream().collect(Collectors.toMap(Student::getAge, v -> v));
-        return map;
+        return list.stream().collect(Collectors.toMap(Student::getAge, v -> v));
     }
 
     public List<Integer> toList(List<Student> list) {
-        List<Integer> integers = list.stream().map(Student::getAge).collect(Collectors.toList());
-        return integers;
+        return list.stream().map(Student::getAge).collect(Collectors.toList());
     }
 
 }
