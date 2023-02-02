@@ -55,8 +55,7 @@ public class JDKProxyExample {
         public Object invoke(Object proxy, Method method, Object[] args)
                 throws InvocationTargetException, IllegalAccessException {
             System.out.println("动态代理之前的业务处理.");
-            Object result = method.invoke(target, args); // 执行调用方法（此方法执行前后，可以进行相关业务处理）
-            return result;
+            return method.invoke(target, args);
         }
     }
 
