@@ -9,7 +9,7 @@ import java.util.concurrent.ExecutionException;
  * @decription 1
  * @date 2022/2/24
  */
-public class ComplatableFutureTest {
+public class CompletableFutureTest {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         long time1 = System.currentTimeMillis();
