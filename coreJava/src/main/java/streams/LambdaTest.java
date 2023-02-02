@@ -29,9 +29,6 @@ public class LambdaTest {
         Student student5 = new Student("songqi", 12, 3);
         list.add(student5);
 
-//        LambdaTest lambdaTest = new LambdaTest();
-//        lambdaTest.doMap(list);
-//        lambdaTest.toList(list);
         AtomicInteger index = new AtomicInteger();
         list.stream().peek(vo-> vo.setGrade(index.getAndIncrement()+1))
                 .sorted(Comparator.comparing(Student::getAge).thenComparing(Student::getGrade))
