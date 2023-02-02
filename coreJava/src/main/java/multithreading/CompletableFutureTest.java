@@ -21,8 +21,7 @@ public class CompletableFutureTest {
                                 e.printStackTrace();
                             }
                             return null;
-                        })
-                        .exceptionally(e -> {
+                        }).exceptionally(e -> {
                             System.out.println("失败:");
                             return null;
                         });
@@ -35,8 +34,7 @@ public class CompletableFutureTest {
                                 e.printStackTrace();
                             }
                             return null;
-                        })
-                        .exceptionally(e -> {
+                        }).exceptionally(e -> {
                             System.out.println("失败:");
                             return null;
                         });
@@ -48,8 +46,7 @@ public class CompletableFutureTest {
                                 e.printStackTrace();
                             }
                             return null;
-                        })
-                        .exceptionally(e -> {
+                        }).exceptionally(e -> {
                             System.out.println("失败:");
                             return null;
                         });
